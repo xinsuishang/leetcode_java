@@ -1,4 +1,5 @@
-//给定一个包含非负整数的 m x n 网格，请找出一条从左上角到右下角的路径，使得路径上的数字总和为最小。 
+package com.leecode.algorithms;
+//给定一个包含非负整数的 m x n 网格，请找出一条从左上角到右下角的路径，使得路径上的数字总和为最小。
 //
 // 说明：每次只能向下或者向右移动一步。 
 //
@@ -38,6 +39,7 @@ class minPathSum {
 //                dp[i][j] = Math.min(dp[i - 1][j], dp[i][j - 1]) + grid[i][j];
 //            }
 //        }
+//        return dp[rows - 1][columns - 1];
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < columns; j++) {
                 if (0 == i && 0 == j) continue;
