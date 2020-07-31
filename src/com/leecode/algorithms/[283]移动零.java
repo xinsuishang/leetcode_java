@@ -20,14 +20,18 @@ package com.leecode.algorithms;
 class moveZeroes {
     public void moveZeroes(int[] nums) {
         int j = 0;
-        for (int i = 0; i < nums.length; i++) {
+        for (int i = 0; i < nums.length; ++i) {
             if (0 != nums[i]) {
                 if (i != j) {
                     int tmp = nums[i];
                     nums[i] = nums[j];
                     nums[j] = tmp;
+                    // 异或会慢一点，变量在寄存器交换不涉及计算
+//                    nums[i] ^= nums[j];
+//                    nums[j] ^= nums[i];
+//                    nums[i] ^= nums[j];
                 }
-                j++;
+                ++j;
             }
         }
     }
